@@ -7,12 +7,12 @@ function params = Parameters_Sw
 % COSFIRE operator
 
 % The radii list of concentric circles
- params.COSFIRE.rholist                = [0,5,10,15,20];  
-%params.COSFIRE.rholist                = [0,0.5,1,1.5,2.0, 2.5];
+% params.COSFIRE.rholist                = [0,5,10,15,20];
+params.COSFIRE.rholist                = [0,2,4,7,10,13,16,20,25];
 
 % Minimum distance between dominant contours lying on the same concentric circle
 params.COSFIRE.eta                    = pi/8;
-%params.COSFIRE.eta                    = pi/3;
+
 % Threshold parameter used to suppress the input filters responses that are less than a
 % fraction t1 of the maximum
 params.COSFIRE.t1                     = 0.1;
@@ -59,13 +59,13 @@ params.inputfilter.Gabor.phaseoffset        = pi; %symmetric Gabor filter. Suita
 params.inputfilter.Gabor.halfwaverect       = 0;
 params.inputfilter.Gabor.bandwidth          = 2;
 params.inputfilter.Gabor.aspectratio        = 0.5;
-params.inputfilter.Gabor.inhibition.method  = 1;
-params.inputfilter.Gabor.inhibition.alpha   = 0;
+params.inputfilter.Gabor.inhibition.method  = 2;
+params.inputfilter.Gabor.inhibition.alpha   = 0.04;%0
 params.inputfilter.Gabor.thinning           = 0;
 
 if strcmp(params.inputfilter.name,'Gabor')
     params.inputfilter.symmetric = ismember(params.inputfilter.Gabor.phaseoffset,[0 pi]);
-else 
+else
     % Other input filter type
     params.inputfilter.symmetric = 1;
 end

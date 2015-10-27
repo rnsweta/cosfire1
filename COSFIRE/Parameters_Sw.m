@@ -7,7 +7,7 @@ function params = Parameters_Sw
 % COSFIRE operator
 
 % The radii list of concentric circles
- params.COSFIRE.rholist                = [0,5,10,15,20];  
+ params.COSFIRE.rholist                = [0,5,10,15,20,25,30];  
 %params.COSFIRE.rholist                = [0,0.5,1,1.5,2.0, 2.5];
 
 % Minimum distance between dominant contours lying on the same concentric circle
